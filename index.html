@@ -386,6 +386,211 @@
             background: var(--charcoal);
         }
 
+        /* Menu Highlights / Recommendations */
+        .menu-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, var(--charcoal-light), rgba(196, 90, 59, 0.15));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(212, 168, 83, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(212, 168, 83, 0.15);
+        }
+
+        .highlight-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-card h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card p {
+            color: var(--cream-dark);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-card .price-hint {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Menu Tabs */
+        .menu-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            padding: 0.5rem;
+            background: var(--charcoal-light);
+            border-radius: 12px;
+        }
+
+        .menu-tab {
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--cream-dark);
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-tab:hover {
+            color: var(--gold);
+            background: rgba(212, 168, 83, 0.1);
+        }
+
+        .menu-tab.active {
+            background: var(--terracotta);
+            color: var(--white);
+        }
+
+        /* Menu Category Content */
+        .menu-category {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .menu-category.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .menu-category-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .menu-category-title h3 {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-category-title p {
+            color: var(--cream-dark);
+            font-size: 0.95rem;
+        }
+
+        /* Menu Items Grid */
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .menu-item {
+            background: var(--charcoal-light);
+            border-radius: 10px;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .menu-item:hover {
+            border-color: rgba(212, 168, 83, 0.3);
+            transform: translateX(5px);
+        }
+
+        .menu-item-info {
+            flex: 1;
+        }
+
+        .menu-item-name {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-item-desc {
+            color: var(--cream-dark);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .menu-item-price {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        /* Subcategory Headers */
+        .menu-subcategory {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+        }
+
+        .menu-subcategory h4 {
+            color: var(--gold);
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Sushi Platten Special Styling */
+        .platte-item {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--charcoal-light), rgba(212, 168, 83, 0.08));
+            border: 1px solid rgba(212, 168, 83, 0.2);
+        }
+
+        .platte-item .menu-item-desc {
+            color: var(--cream);
+        }
+
+        /* Mochi Grid */
+        .mochi-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .mochi-flavor {
+            background: rgba(212, 168, 83, 0.15);
+            color: var(--cream);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Legacy menu-grid for highlights if needed */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -799,6 +1004,23 @@
                 grid-template-columns: 1fr;
             }
 
+            .menu-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-tabs {
+                gap: 0.25rem;
+            }
+
+            .menu-tab {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+
             .family-grid {
                 grid-template-columns: 1fr;
             }
@@ -923,54 +1145,613 @@
     <section class="menu" id="menu">
         <div class="section-container">
             <div class="section-header fade-in">
-                <span class="section-label">Unsere Spezialitäten</span>
-                <h2 class="section-title">Köstlichkeiten aus Tibet & Japan</h2>
-                <p class="section-subtitle">Entdecken Sie unsere sorgfältig zubereiteten Gerichte – jedes ein kleines Meisterwerk</p>
+                <span class="section-label">Speisekarte</span>
+                <h2 class="section-title">Unsere Köstlichkeiten</h2>
+                <p class="section-subtitle">Tibetisch-japanische Fusionsküche – frisch zubereitet mit Liebe</p>
             </div>
-            <div class="menu-grid">
-                <div class="menu-card fade-in">
-                    <div class="menu-card-image">
-                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80" alt="Momos - Tibetische Teigtaschen">
+
+            <!-- Recommendations / Highlights -->
+            <div class="menu-highlights fade-in">
+                <div class="highlight-card">
+                    <div class="highlight-card-icon">🥟</div>
+                    <h3>Momos</h3>
+                    <p>Unsere tibetischen Teigtaschen – handgemacht nach Familienrezept</p>
+                    <span class="price-hint">ab CHF 14.00</span>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-card-icon">🍣</div>
+                    <h3>Sushi Platten</h3>
+                    <p>Perfekt zum Teilen – für jeden Anlass die richtige Grösse</p>
+                    <span class="price-hint">ab CHF 28.00</span>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-card-icon">🥗</div>
+                    <h3>Poke Bowls</h3>
+                    <p>Frisch, bunt und gesund – mit Lachs, Thunfisch oder veggie</p>
+                    <span class="price-hint">ab CHF 16.50</span>
+                </div>
+            </div>
+
+            <!-- Menu Tabs -->
+            <div class="menu-tabs fade-in">
+                <button class="menu-tab active" data-category="vorspeisen">Vorspeisen</button>
+                <button class="menu-tab" data-category="tatar">Tatar & Poke</button>
+                <button class="menu-tab" data-category="nigiri">Nigiri</button>
+                <button class="menu-tab" data-category="maki">Maki</button>
+                <button class="menu-tab" data-category="rolls">Rolls</button>
+                <button class="menu-tab" data-category="platten">Sushi Platten</button>
+                <button class="menu-tab" data-category="momos">Momos</button>
+                <button class="menu-tab" data-category="desserts">Desserts</button>
+                <button class="menu-tab" data-category="getraenke">Getränke</button>
+            </div>
+
+            <!-- Category: Vorspeisen -->
+            <div class="menu-category active" id="vorspeisen">
+                <div class="menu-category-title">
+                    <h3>Vorspeisen & Salate</h3>
+                    <p>Der perfekte Start für Ihr kulinarisches Erlebnis</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Edamame</div>
+                            <div class="menu-item-desc">Japanische Sojabohnen, warm und leicht gesalzen</div>
+                        </div>
+                        <div class="menu-item-price">CHF 5.00</div>
                     </div>
-                    <div class="menu-card-content">
-                        <span class="menu-card-subtitle">Tibetische Tradition</span>
-                        <h3 class="menu-card-title">Momos</h3>
-                        <p class="menu-card-desc">Traditionelle tibetische Teigtaschen, handgemacht nach Familienrezept. Mit regionalem Fleisch, vegetarisch oder vegan – aus Weissmehl oder Ruchmehl.</p>
-                        <div class="menu-tags">
-                            <span class="menu-tag">Vegetarisch</span>
-                            <span class="menu-tag">Vegan</span>
-                            <span class="menu-tag">Hausgemacht</span>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Miso-Suppe</div>
+                            <div class="menu-item-desc">Japanische Suppe mit Tofu und Wakame</div>
+                        </div>
+                        <div class="menu-item-price">CHF 5.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Shabaley (2 Stk)</div>
+                            <div class="menu-item-desc">Frittierte Teigtaschen gefüllt mit regionalem Rinderhackfleisch</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Wakame</div>
+                            <div class="menu-item-desc">Marinierter Seegrassalat</div>
+                        </div>
+                        <div class="menu-item-price">CHF 6.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Harumaki (3 Stk)</div>
+                            <div class="menu-item-desc">Frühlingsrollen gefüllt mit Gemüse</div>
+                        </div>
+                        <div class="menu-item-price">CHF 8.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Sushi Reis</div>
+                            <div class="menu-item-desc">Als Beilage</div>
+                        </div>
+                        <div class="menu-item-price">CHF 5.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Ebi Tempura (3 Stk)</div>
+                            <div class="menu-item-desc">Gebratene Garnelen mit süsser Chilisauce</div>
+                        </div>
+                        <div class="menu-item-price">CHF 11.50</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Tatar & Poke -->
+            <div class="menu-category" id="tatar">
+                <div class="menu-category-title">
+                    <h3>Tatar, Sashimi & Poke Bowls</h3>
+                    <p>Frisch und roh – für den puren Geschmack</p>
+                </div>
+                
+                <div class="menu-subcategory"><h4>Tatar</h4></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Spicy Salmon-Tatar</div>
+                            <div class="menu-item-desc">Lachs, Tongarashi, Sesamöl und Dasahi</div>
+                        </div>
+                        <div class="menu-item-price">CHF 14.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Spicy Tuna-Tatar</div>
+                            <div class="menu-item-desc">Thunfisch, Tongarashi, Sesamöl und Dasahi</div>
+                        </div>
+                        <div class="menu-item-price">CHF 14.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Avocado Tatar</div>
+                            <div class="menu-item-desc">Tongarashi, Sesamöl, Cherry Tomaten und Dasahi mit Avocado</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory"><h4>Sashimi</h4></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Thunfisch Sashimi mit Salat (5 Stk)</div>
+                        </div>
+                        <div class="menu-item-price">CHF 13.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Lachs Sashimi mit Salat (5 Stk)</div>
+                        </div>
+                        <div class="menu-item-price">CHF 12.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Mix Sashimi mit Salat</div>
+                        </div>
+                        <div class="menu-item-price">CHF 13.00</div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory"><h4>Poke Bowls</h4></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Tuna Poke Bowl</div>
+                            <div class="menu-item-desc">Thunfisch, Avocado, Gurke, Edamame, Mango, Wakame, Ingwer und Sushi Reis</div>
+                        </div>
+                        <div class="menu-item-price">CHF 18.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Salmon Poke Bowl</div>
+                            <div class="menu-item-desc">Lachs, Avocado, Gurke, Edamame, Mango, Wakame, Ingwer und Sushi Reis</div>
+                        </div>
+                        <div class="menu-item-price">CHF 17.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Veggie Poke Bowl</div>
+                            <div class="menu-item-desc">Tofu, Avocado, Gurke, Edamame, Mango, Wakame, Ingwer und Sushi Reis</div>
+                        </div>
+                        <div class="menu-item-price">CHF 16.50</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Nigiri -->
+            <div class="menu-category" id="nigiri">
+                <div class="menu-category-title">
+                    <h3>Sushi – Nigiri (2 Stk)</h3>
+                    <p>Handgeformter Reis mit frischem Belag</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Lachs Nigiri</div>
+                        </div>
+                        <div class="menu-item-price">CHF 5.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Lachs Avo Nigiri</div>
+                        </div>
+                        <div class="menu-item-price">CHF 6.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Thunfisch Nigiri</div>
+                        </div>
+                        <div class="menu-item-price">CHF 5.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Thunfisch Avo Nigiri</div>
+                        </div>
+                        <div class="menu-item-price">CHF 6.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Ebi Nigiri</div>
+                        </div>
+                        <div class="menu-item-price">CHF 5.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Avocado Nigiri</div>
+                        </div>
+                        <div class="menu-item-price">CHF 4.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Inari Nigiri (Tofu)</div>
+                        </div>
+                        <div class="menu-item-price">CHF 5.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Tobiko Gunkan</div>
+                        </div>
+                        <div class="menu-item-price">CHF 6.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Ikura Gunkan</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Maki -->
+            <div class="menu-category" id="maki">
+                <div class="menu-category-title">
+                    <h3>Maki (6 Stk)</h3>
+                    <p>Klassisch gerollte Sushi-Rollen</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Gurken Maki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 8.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Avokado Maki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 8.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Mango Maki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 8.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Thunfisch Avo Maki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Lachs Avo Maki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Tekka Maki (Thunfisch)</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Shake Maki (Lachs)</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Rolls -->
+            <div class="menu-category" id="rolls">
+                <div class="menu-category-title">
+                    <h3>Rolls</h3>
+                    <p>Unsere Spezialrollen – kreativ und köstlich</p>
+                </div>
+                
+                <div class="menu-subcategory"><h4>Rainbow Rolls</h4></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Rainbow Lachs Mango</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Rainbow Mango Avocado</div>
+                        </div>
+                        <div class="menu-item-price">CHF 9.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Rainbow Tuna</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Rainbow Lachs Avocado</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Rainbow Lachs Gurke</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Tsom Shake Rainbow</div>
+                            <div class="menu-item-desc">Flambiertes Lachs</div>
+                        </div>
+                        <div class="menu-item-price">CHF 11.50</div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory"><h4>Futomaki</h4></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Lachs Futomaki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 9.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Thunfisch Futomaki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 9.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Veggie Futomaki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 8.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Shrimps Futomaki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 9.00</div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory"><h4>Spezialrollen</h4></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Crunchy Roll</div>
+                            <div class="menu-item-desc">Frittierte Garnelen, Avocado, Mayo</div>
+                        </div>
+                        <div class="menu-item-price">CHF 9.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">California Roll</div>
+                            <div class="menu-item-desc">Surimi, Tobiko, Avocado</div>
+                        </div>
+                        <div class="menu-item-price">CHF 9.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Spicy Tuna Roll</div>
+                        </div>
+                        <div class="menu-item-price">CHF 9.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Hana Salmon Roll</div>
+                        </div>
+                        <div class="menu-item-price">CHF 9.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Salmon Crispy Roll</div>
+                        </div>
+                        <div class="menu-item-price">CHF 12.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Veggie Crispy Roll</div>
+                        </div>
+                        <div class="menu-item-price">CHF 11.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Shrimp Summer Roll</div>
+                        </div>
+                        <div class="menu-item-price">CHF 12.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Salmon Summer Roll</div>
+                        </div>
+                        <div class="menu-item-price">CHF 12.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Sushi Platten -->
+            <div class="menu-category" id="platten">
+                <div class="menu-category-title">
+                    <h3>Sushi Platten</h3>
+                    <p>Perfekt zum Teilen – für jeden Anlass</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item platte-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Tsom Small (13 Stk)</div>
+                            <div class="menu-item-desc">6 Hosomaki, 3 Nigiri, 4 Uramaki</div>
+                        </div>
+                        <div class="menu-item-price">CHF 28.00</div>
+                    </div>
+                    <div class="menu-item platte-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Tsom Medium (25 Stk)</div>
+                            <div class="menu-item-desc">12 Hosomaki, 4 Nigiri, 4 Uramaki, 5 Sashimi</div>
+                        </div>
+                        <div class="menu-item-price">CHF 55.00</div>
+                    </div>
+                    <div class="menu-item platte-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Tsom Large (42 Stk)</div>
+                            <div class="menu-item-desc">8 Futomaki, 6 Hosomaki, 8 Nigiri, 8 Uramaki, 8 Rainbow, 4 Crispy</div>
+                        </div>
+                        <div class="menu-item-price">CHF 99.50</div>
+                    </div>
+                    <div class="menu-item platte-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Panda Platte (65 Stk)</div>
+                            <div class="menu-item-desc">8 Futomaki, 12 Hosomaki, 12 Nigiri, 12 Uramaki, 8 Rainbow, 8 Crispy, 5 Sashimi</div>
+                        </div>
+                        <div class="menu-item-price">CHF 157.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Momos -->
+            <div class="menu-category" id="momos">
+                <div class="menu-category-title">
+                    <h3>Momos</h3>
+                    <p>Traditionelle tibetische Teigtaschen – unser Herzstück</p>
+                </div>
+                
+                <div class="menu-subcategory"><h4>Gedämpft</h4></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Rindfleisch Momo</div>
+                            <div class="menu-item-desc">6 / 8 / 10 Stück</div>
+                        </div>
+                        <div class="menu-item-price">CHF 14 / 18 / 22</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Veggie Momo</div>
+                            <div class="menu-item-desc">6 / 8 / 10 Stück</div>
+                        </div>
+                        <div class="menu-item-price">CHF 14 / 18 / 22</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Vegan Momo</div>
+                            <div class="menu-item-desc">6 / 8 / 10 Stück</div>
+                        </div>
+                        <div class="menu-item-price">CHF 14 / 18 / 22</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Mix Momo</div>
+                            <div class="menu-item-desc">6 / 8 / 10 Stück</div>
+                        </div>
+                        <div class="menu-item-price">CHF 14 / 18 / 22</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Mokthuk</div>
+                            <div class="menu-item-desc">Suppe mit 6 Momos</div>
+                        </div>
+                        <div class="menu-item-price">CHF 16.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Momo mit Ruchmehl</div>
+                            <div class="menu-item-desc">6 Stück</div>
+                        </div>
+                        <div class="menu-item-price">CHF 15.00</div>
+                    </div>
+                </div>
+
+                <div class="menu-subcategory"><h4>Frittiert</h4></div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Frittierte Rindfleisch Momo</div>
+                            <div class="menu-item-desc">6 / 8 / 10 Stück</div>
+                        </div>
+                        <div class="menu-item-price">CHF 16 / 20 / 24</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Frittierte Veggie Momo</div>
+                            <div class="menu-item-desc">6 / 8 / 10 Stück</div>
+                        </div>
+                        <div class="menu-item-price">CHF 16 / 20 / 24</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Frittierte Vegan Momo</div>
+                            <div class="menu-item-desc">6 / 8 / 10 Stück</div>
+                        </div>
+                        <div class="menu-item-price">CHF 16 / 20 / 24</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Desserts -->
+            <div class="menu-category" id="desserts">
+                <div class="menu-category-title">
+                    <h3>Desserts – Mochi</h3>
+                    <p>Japanische Reiskuchen mit köstlichen Füllungen</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item platte-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Mochi – alle Sorten CHF 5.00</div>
+                            <div class="mochi-grid">
+                                <span class="mochi-flavor">🍫 Schokolade</span>
+                                <span class="mochi-flavor">🥭 Mango</span>
+                                <span class="mochi-flavor">🍵 Matcha</span>
+                                <span class="mochi-flavor">🍦 Vanille</span>
+                                <span class="mochi-flavor">🍑 Passionsfrucht</span>
+                                <span class="mochi-flavor">🥥 Kokosnuss</span>
+                                <span class="mochi-flavor">🍓 Cheesecake Strawberry</span>
+                                <span class="mochi-flavor">🫐 Himbeere</span>
+                                <span class="mochi-flavor">🍋 Yuzu Lemon</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="menu-card fade-in">
-                    <div class="menu-card-image">
-                        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=600&q=80" alt="Sushi">
-                    </div>
-                    <div class="menu-card-content">
-                        <span class="menu-card-subtitle">Japanische Kunst</span>
-                        <h3 class="menu-card-title">Sushi</h3>
-                        <p class="menu-card-desc">Authentisches Sushi vom ausgebildeten Sushi-Chef Lobsang. Frische Zutaten, meisterhafte Zubereitung – ein Genuss für alle Sinne.</p>
-                        <div class="menu-tags">
-                            <span class="menu-tag">Frisch</span>
-                            <span class="menu-tag">Premium</span>
-                            <span class="menu-tag">Handgerollt</span>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Category: Getränke -->
+            <div class="menu-category" id="getraenke">
+                <div class="menu-category-title">
+                    <h3>Getränke</h3>
+                    <p>Die perfekte Begleitung zu Ihrem Essen</p>
                 </div>
-                <div class="menu-card fade-in">
-                    <div class="menu-card-image">
-                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" alt="Poke Bowl">
-                    </div>
-                    <div class="menu-card-content">
-                        <span class="menu-card-subtitle">Modern & Frisch</span>
-                        <h3 class="menu-card-title">Poke Bowls</h3>
-                        <p class="menu-card-desc">Bunte Bowls mit frischem Fisch, knackigem Gemüse und aromatischen Toppings. Gesund, lecker und perfekt zum Mitnehmen.</p>
-                        <div class="menu-tags">
-                            <span class="menu-tag">Gesund</span>
-                            <span class="menu-tag">Frisch</span>
-                            <span class="menu-tag">Take-Away</span>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Softdrinks 5dl</div>
+                            <div class="menu-item-desc">Cola, Fanta, Sprite, Ice Tea, Rivella, etc.</div>
                         </div>
+                        <div class="menu-item-price">CHF 4.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Kaffee / Tee</div>
+                        </div>
+                        <div class="menu-item-price">CHF 4.00–5.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Bier 0.33l</div>
+                            <div class="menu-item-desc">Kirin, Asahi, Sapporo, Corona, etc.</div>
+                        </div>
+                        <div class="menu-item-price">CHF 5.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Aperol / Hugo Spritz</div>
+                        </div>
+                        <div class="menu-item-price">CHF 10.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="menu-item-name">Junmai Sake 1.8dl</div>
+                        </div>
+                        <div class="menu-item-price">CHF 11.00</div>
                     </div>
                 </div>
             </div>
@@ -1205,6 +1986,28 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+            });
+        });
+
+        // Menu Tabs
+        const menuTabs = document.querySelectorAll('.menu-tab');
+        const menuCategories = document.querySelectorAll('.menu-category');
+
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and categories
+                menuTabs.forEach(t => t.classList.remove('active'));
+                menuCategories.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding category
+                const categoryId = tab.getAttribute('data-category');
+                const category = document.getElementById(categoryId);
+                if (category) {
+                    category.classList.add('active');
                 }
             });
         });
